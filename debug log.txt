@@ -1,0 +1,10 @@
+-tried to check file that contains images to see if there are any issues
+-tried to print analysis variable to see why the field is undefined
+-found that it was because the tags parameter that was passed into includesText is undefined
+-used console.log to print analysis (because the tags that's passed in is analysis.tags)
+-did not see a tags field in analysis 
+-can't tell if computervision successfully returned anything, could be the reason there's no tags field
+-looked at computer vision API and noticed it doesn't match analysis (value assigned to the return value)
+-checked image link passed in and there doesn't seem to be any issues
+-https://docs.microsoft.com/en-us/python/api/azure-cognitiveservices-vision-computervision/azure.cognitiveservices.vision.computervision.operations.computervisionclientoperationsmixin?view=azure-python
+ said that either a json or an error code and message should return however I don't see an error code but the json doesn't look valid either

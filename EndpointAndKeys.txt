@@ -1,0 +1,4 @@
+https://eastus.api.cognitive.microsoft.com/
+
+"key1": "b65029bc62f04010a462f72170d2c7b5",
+"key2": "b2c971b2c6c9491cad465187e3ba472b"

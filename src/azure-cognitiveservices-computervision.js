@@ -8,8 +8,8 @@ import { ApiKeyCredentials } from '@azure/ms-rest-js';
 import RandomImageUrl from './DefaultImages';
 
 // Authentication requirements
-const key = process.env.REACT_APP_COMPUTERVISIONKEY;
-const endpoint = process.env.REACT_APP_COMPUTERVISIONENDPOINT;
+const key = "b65029bc62f04010a462f72170d2c7b5";
+const endpoint = "https://eastus.api.cognitive.microsoft.com/";
 
 console.log(`key = ${key}`)
 console.log(`endpoint = ${endpoint}`)
@@ -37,6 +37,7 @@ export const isConfigured = () => {
 
 // Computer Vision detected Printed Text
 const includesText = async (tags) => {
+    console.log(tags);
     return tags.filter((el) => {
         return el.name.toLowerCase() === "text";
     });
@@ -68,6 +69,7 @@ export const computerVision = async (url) => {
     const analysis = await computerVisionClient.analyzeImage(urlToAnalyze, { visualFeatures });
 
     // text detected - what does it say and where is it
+    const analysis2= analysis._response
     if (includesText(analysis.tags) || includesHandwriting(analysis.tags)) {
         analysis.text = await readTextFromURL(computerVisionClient, urlToAnalyze);
     }
